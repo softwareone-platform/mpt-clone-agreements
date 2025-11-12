@@ -15,14 +15,14 @@ pip install -r requirements.txt
    ```
    OPS_TOKEN=your_operations_token
    VENDOR_TOKEN=your_vendor_token
-   API_URL=https://portal.s1.live
+   API_URL=https://api.portal.platform.softwareone.com
    ```
 
    **Option B:** Export them as environment variables:
    ```bash
    export OPS_TOKEN=your_operations_token
    export VENDOR_TOKEN=your_vendor_token
-   export API_URL=https://portal.s1.live
+   export API_URL=https://api.portal.platform.softwareone.com
    ```
 
 Optional variables (only needed for `--microsoft-sync` flag):
