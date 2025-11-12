@@ -1,0 +1,12 @@
+# HTTP client with HTTP/2 support
+httpx[http2]>=0.24.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Excel file handling
+openpyxl>=3.1.0
+
+# Rich console output and logging
+rich>=13.0.0
+

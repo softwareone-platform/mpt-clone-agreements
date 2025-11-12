@@ -1,0 +1,33 @@
+# Output folder with agreement dumps and generated files
+output/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment files (optional - uncomment if you don't want to track env files)
+# .env
+# .mpt-clone-agreement
+
