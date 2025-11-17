@@ -85,6 +85,22 @@ Terminate all subscriptions for an agreement:
 python terminate_agreement.py --agreement-id AGR-1234-5678-9012
 ```
 
+### 5. Add Audit Records (`add_audit_record.py`)
+
+Create audit records for both old and new agreements to track the cloning operation:
+
+```bash
+python add_audit_record.py --agreement-id AGR-1234-5678-9012
+```
+
+This script:
+- Reads both `agreement_object.json` (old agreement) and `final_agreement.json` (new agreement)
+- Creates an audit record for the old agreement documenting it was cloned to the new one
+- Creates an audit record for the new agreement documenting it was cloned from the old one
+- Both audit records include complete agreement payloads for reference
+
+**Note:** This script requires both `dump_agreement.py` and `create_new_agreement.py` to have been run first.
+
 ## Requirements
 
 - **Operations Token (OPS_TOKEN)**: Required for reading agreements and subscriptions
@@ -97,7 +113,8 @@ python terminate_agreement.py --agreement-id AGR-1234-5678-9012
 2. Review the generated files in `output/AGR-XXXX-XXXX-XXXX/`
 3. Run `create_new_agreement.py` to create the new agreement
 4. (Optional) Run `update_subscription_markups.py` to adjust pricing
-5. (Optional) Run `terminate_agreement.py` to terminate the original agreement
+5. (Optional) Run `add_audit_record.py` to create audit records for tracking
+6. (Optional) Run `terminate_agreement.py` to terminate the original agreement
 
 ## License
 
