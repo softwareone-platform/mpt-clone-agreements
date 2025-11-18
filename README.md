@@ -110,11 +110,11 @@ This script:
 ## Workflow
 
 1. Run `dump_agreement.py` with either `--listing-id` or `--licensee-id`
+2. Run `terminate_agreement.py` to terminate the original agreement
 2. Review the generated files in `output/AGR-XXXX-XXXX-XXXX/`
 3. Run `create_new_agreement.py` to create the new agreement
-4. (Optional) Run `update_subscription_markups.py` to adjust pricing
-5. (Optional) Run `add_audit_record.py` to create audit records for tracking
-6. (Optional) Run `terminate_agreement.py` to terminate the original agreement
+4. Run `update_subscription_markups.py` to adjust pricing
+5. Run `add_audit_record.py` to create audit records for tracking
 
 ## License
 
