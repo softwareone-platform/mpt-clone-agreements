@@ -60,6 +60,13 @@ def parse_arguments() -> argparse.Namespace:
         help='Original/old Agreement ID (e.g., AGR-0413-5979-0750)'
     )
     parser.add_argument(
+        '--request-item-id',
+        type=str,
+        required=True,
+        dest='request_item_id',
+        help='Request Item ID which triggered the change (e.g., RITM0012345)'
+    )
+    parser.add_argument(
         '--debug',
         action='store_true',
         help='Enable debug level logging (more verbose output)'
@@ -221,7 +228,9 @@ def main():
             token=token,
             event="extensions.clone.agreement",
             summary=f"Agreement has been cloned to {new_agreement_id}",
-            details=f"The agreement has been cloned to new one with id {new_agreement_id}",
+            details=(f"The agreement has been cloned to new one with id {new_agreement_id}."
+                     f"The change was requested in work item: {args.request_item_id}"
+                     ),
             object_id=old_agreement_id,
             documents=documents,
             logger=logger
@@ -234,7 +243,8 @@ def main():
             token=token,
             event="extensions.clone.agreement",
             summary=f"Agreement has been cloned from {old_agreement_id}",
-            details=f"The agreement has been cloned from the one with id {old_agreement_id}",
+            details=(f"The agreement has been cloned from the one with id {old_agreement_id}."
+                     f"The change was requested in work item: {args.request_item_id}"),
             object_id=new_agreement_id,
             documents=documents,
             logger=logger
@@ -257,4 +267,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
+    
